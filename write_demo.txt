@@ -1,0 +1,9 @@
+Written using a context manager
+Yuno
+Address: 221 Hage Street
+City: Clover Kingdom
+Country: Japan
+Antony
+Address: 221 Baker Street
+City: London
+Country:United Kingdom
