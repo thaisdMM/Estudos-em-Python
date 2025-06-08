@@ -1,0 +1,4 @@
+Creating a new file using x statament.
+Using r+ to adding a new content in the file.
+Using r+ to adding a new content in the file.
+Using r+ to adding a new content in the file.
