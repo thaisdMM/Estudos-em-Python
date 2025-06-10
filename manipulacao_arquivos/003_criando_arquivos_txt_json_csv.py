@@ -112,7 +112,9 @@ try:
     # ele fala que wiriter() metodo cria linhas vazias entre cada row, mas no meu caso isso não aconteceu
     ## se fosse para concertar isso teria que passar newline=""
     # with open(file_path, "w", newline="") as file:
-    with open(file_path, "w") as file:
+    # > mesmo nao aparecendo no meu, é mais seguro para csv sempre passar esse parametro: newline=""
+    ##> Sempre deve ser seguro especificar newline='', já que o módulo csv faz seu próprio tratamento de nova linha (universal)
+    with open(file_path, "w", newline="") as file:
         writer = csv.writer(file)
         for row in employees:
             writer.writerow(row)
