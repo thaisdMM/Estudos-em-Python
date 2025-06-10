@@ -12,9 +12,9 @@ with open(file_path, "r") as file:
     content = file.read()
     print(content)
 
-# 2- ERROR FileNotFoundError: [Errno 2] No such file or directory:
-> no caso abaixou faltou .txt - agora com a exceção: output: That file was not found.
-# tb adicionamos PermissionError
+# # 2- ERROR FileNotFoundError: [Errno 2] No such file or directory:
+# > no caso abaixou faltou .txt - agora com a exceção: output: That file was not found.
+# # tb adicionamos PermissionError
 
 file_path = "/Users/thaismoreira/Desktop/output.txt"
 
@@ -33,7 +33,7 @@ file_path = "/Users/thaismoreira/Desktop/employees2.json"
 try:
     with open(file_path, "r") as file:
         content = json.load(file)
-        print( content)
+        print(content)
 except FileNotFoundError:
     print("That file was not found.")
 except PermissionError:
@@ -44,7 +44,7 @@ file_path = "/Users/thaismoreira/Desktop/employees2.json"
 try:
     with open(file_path, "r") as file:
         content = json.load(file)
-        print( content["name"]) # output: Spongebob
+        print(content["name"])  # output: Spongebob
 except FileNotFoundError:
     print("That file was not found.")
 except PermissionError:
@@ -55,7 +55,7 @@ except PermissionError:
 file_path = "/Users/thaismoreira/Desktop/employees3.csv"
 
 try:
-    with open(file_path, "r") as file:
+    with open(file_path, "r", newline="") as file:
         content = csv.reader(file)
         for line in content:
             print(line)
