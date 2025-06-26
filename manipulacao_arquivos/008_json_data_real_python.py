@@ -113,7 +113,8 @@ dog_data = {
 file_path = "dogs_data.json"
 
 with open(file_path, "w", encoding="utf-8") as write_file:
-    json.dump(dog_data, write_file, indent=4)
+    # ensure_ascii=False para conseguir ficar mais visual quando as palavras tiverem acento
+    json.dump(dog_data, write_file, indent=4, ensure_ascii=False)
     print(f"File '{file_path}' was created")
 
 # reading the content of the file
