@@ -13,5 +13,5 @@ lista_numeros = []
 for i in range(0, 5):
     lista_numeros.append(int(input("Digite 5 números inteiros para compor uma lista ")))
 print(lista_numeros)
-metadade = list(map(lambda x: x / 2, lista_numeros))
-print(metadade)
+metade = list(map(lambda x: x / 2, lista_numeros))
+print(f"A medade dos número da lista {lista_numeros} é: {metade}")
