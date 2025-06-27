@@ -73,3 +73,12 @@ print(pares)
 # LIST COMPREHENSION:
 pares2 = [x for x in lista if x % 2 == 0]
 print(pares2)
+
+# Conclusão e próximos passos
+
+# Ainda não exploramos:
+# 	•	aninhamento de list comprehensions;
+# 	•	uso com estrutura de dicionários mais complexas;
+# 	•	criação de condições múltiplas.
+
+# Mas para o momento, está mais do que suficiente.
