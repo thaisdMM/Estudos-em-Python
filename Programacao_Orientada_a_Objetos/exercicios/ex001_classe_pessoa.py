@@ -13,11 +13,12 @@ class Pessoa:
     def comer(self, comida):
         print(f"Eu amo comer: {comida}.")
 
-#objeto : pessoa1 -> criei esse objeto a partir da instanciação de uma classe
+
+# objeto : pessoa1 -> criei esse objeto a partir da instanciação de uma classe
 pessoa1 = Pessoa("João", 1.80, 35)
 print(f"Olá, meu nome é {pessoa1.nome}")
 print(f"Eu tenho {pessoa1.altura:.2f} de altura e {pessoa1.idade} anos de idade.")
-pessoa1.comer("Hambúrguer com batata frita e coca-cola.")
+pessoa1.comer("Hambúrguer com batata frita.")
 pessoa1.correr(10)
 
 
