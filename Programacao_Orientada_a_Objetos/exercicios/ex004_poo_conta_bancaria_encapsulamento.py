@@ -21,84 +21,34 @@ class ContaBancaria:
 
     def depositar(self, quantia: float):
         if quantia > 0:
-            deposito = quantia
             self.__saldo += quantia
-            return deposito
+            return f"Conta bancária de {self.__titular}: depósito de R${quantia:.2f} efetuado com sucesso. Saldo atualizado para R${self.get_consultar_saldo():.2f}"
         else:
-            return False
+            return f"Operação cancelada! Não é possível depositar R${quantia:.2f}. O valor a depositar tem que ser positivo."
 
-    def sacar(self, quantia: float) -> bool:
+    def sacar(self, quantia: float):
         if quantia <= self.__saldo:
             self.__saldo -= quantia
-            return True
+            return f"Conta bancária de {self.__titular}: saque de R${quantia:.2f} efetuado com sucesso. Saldo atualizado para R${self.get_consultar_saldo():.2f}"
         else:
-            return False
+            return f"Operação cancelada! Não é possível sacar quantia de R${quantia:.2f}. Verifique seu saldo para efetuar a operação."
 
     def get_consultar_saldo(self):
         return self.__saldo
-
-    def deposito_mensagem(self, quantia):
-        deposito = self.depositar(quantia)
-        if deposito:
-            mensagem = f"Conta bancária de {self.__titular}: depósito de R${deposito} efetuado com sucesso. Saldo atualizado para {self.get_consultar_saldo()}"
-        else:
-            mensagem = "Operação cancelada! Não é possível depositar quantia R$0,00 ou negativa"
-        return mensagem
-
-    def sacar_mensagem(self, quantia: float):
-        if self.sacar(quantia) == True:
-            mensagem = f"Conta bancária de {self.__titular}: saque de R${quantia} efetuado com sucesso. Saldo atualizado para {self.get_consultar_saldo()}"
-        else:
-            mensagem = "Operação cancelada! Não é possível sacar quantia maior do que o saldo bancário"
-        return mensagem
-
-
-# class SituacaoContaBancaria(ContaBancaria):
-#     def __init__(self, titular: str, saldo: float):
-#         super().__init__(titular, saldo)
-
-#     def deposito_mensagem(self, quantia: float):
-#         if self.depositar(quantia) == True:
-#             mensagem = f"Conta bancária de {self.__titular}: depósito de R${quantia} efetuado com sucesso. Saldo atualizado para {self.get_consultar_saldo}"
-#         else:
-#             mensagem = "Operação cancelada! Não é possível depositar quantia R$0,00 ou negativa"
-#         return mensagem
-
-#     def sacar_mensagem(self, quantia: float):
-#         if self.sacar(quantia) == True:
-#             mensagem = f"Conta bancária de {self.__titular}: saque de R${quantia} efetuado com sucesso. Saldo atualizado para {self.get_consultar_saldo}"
-#         else:
-#             mensagem = "Operação cancelada! Não é possível sacar quantia maior do que o saldo bancário"
-#         return mensagem
 
 
 conta_bancaria1 = ContaBancaria("Thaís", 1000)
 saldo1 = conta_bancaria1.get_consultar_saldo()
 print(f"O saldo da Conta Bancária é  R${saldo1}")
-conta_bancaria1.depositar(-10)
-mesagem_deposito1 = conta_bancaria1.deposito_mensagem(-10)
-print(mesagem_deposito1)
+deposito1 = conta_bancaria1.depositar(-10)
+print(deposito1)
 print(conta_bancaria1.get_consultar_saldo())
-conta_bancaria1.depositar(80.9)
+deposito2 = conta_bancaria1.depositar(80.9)
+print(deposito2)
+print(conta_bancaria1.get_consultar_saldo())
+saque1 = conta_bancaria1.sacar(2000)
+print(saque1)
 saldo2 = conta_bancaria1.get_consultar_saldo()
-print(saldo2)
-mesagem_deposito2 = conta_bancaria1.deposito_mensagem(80.9)
-print(mesagem_deposito2)
-
-print(conta_bancaria1.get_consultar_saldo())
-conta_bancaria1.sacar(2000)
-saldo3 = conta_bancaria1.get_consultar_saldo()
-print(saldo3)
-mesagem_saque1 = conta_bancaria1.sacar_mensagem(2000)
-print(mesagem_saque1)
-
-# tentando separar as responsabilidades, mas nesse caso as messagens ao receber as operação:
-
-# O saldo da Conta Bancária é  R$1000
-# Operação cancelada! Não é possível depositar quantia R$0,00 ou negativa
-# 1000
-# 1080.9
-# Conta bancária de Thaís: depósito de R$80.9 efetuado com sucesso. Saldo atualizado para 1161.8000000000002
-# 1161.8000000000002
-# 1161.8000000000002
-# Operação cancelada! Não é possível sacar quantia maior do que o saldo bancário
+print(f"O saldo da Conta Bancária é  R${saldo2}")
+saque2 = conta_bancaria1.sacar(380.90)
+print(saque2)
