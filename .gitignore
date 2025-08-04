@@ -1,1 +1,26 @@
+# Ignorar arquivos de cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignorar banco de dados SQLite
+*.db
+
+# Ignorar arquivos do macOS
 .DS_Store
+
+# Ignorar arquivos de backup ou temporários (opcional)
+*.bak
+*.tmp
+*~
+
+# Ignorar configurações locais específicas (se houver)
+.env
+*.local
+*.log
+
+# Ignorar arquivos gerados por IDEs ou editores
+.vscode/
+.idea/
+*.swp
+*.swo
