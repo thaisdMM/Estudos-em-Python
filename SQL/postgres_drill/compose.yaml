@@ -1,0 +1,15 @@
+name: sql-drills
+
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: drills
+      POSTGRES_PASSWORD: drills
+      POSTGRES_DB: library
+    volumes:
+      - pgdata:/var/lib/postgresql
+      - ./seed:/seed:ro
+
+volumes:
+  pgdata:
