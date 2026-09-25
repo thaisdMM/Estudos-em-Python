@@ -118,3 +118,41 @@ SELECT book_id, loaned_on, returned_on FROM loans ORDER BY returned_on DESC;
        2 | 2026-03-17 | 2026-04-02
 (18 rows)
 ```
+
+# 7. Liste os membros (full_name, joined_on) do que entrou por último para o que entrou primeiro.
+
+```sql
+SELECT full_name, joined_on FROM members ORDER BY joined_on DESC;
+```
+
+```
+   full_name    | joined_on  
+----------------+------------
+ Filipe Moreira | 2026-01-09
+ Elena Costa    | 2025-03-14
+ Diogo Antunes  | 2025-01-20
+ Bruno Silva    | 2024-06-30
+ Ana Ferreira   | 2023-02-11
+ Carla Mendes   | 2022-11-05
+(6 rows)
+```
+
+# 8. Liste os livros (title, copies) da menor quantidade de cópias para a maior e, entre os que têm a mesma quantidade, em ordem alfabética pelo título.
+
+```sql
+SELECT title, copies FROM books ORDER BY copies, title;
+```
+
+```
+           title           | copies 
+---------------------------+--------
+ No Longer at Ease         |      1
+ The Dispossessed          |      1
+ If on a Winter's Night    |      2
+ The Left Hand of Darkness |      2
+ The Vegetarian            |      2
+ A Wizard of Earthsea      |      3
+ Invisible Cities          |      4
+ Things Fall Apart         |      5
+(8 rows)
+```
